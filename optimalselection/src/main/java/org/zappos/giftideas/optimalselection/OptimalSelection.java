@@ -63,7 +63,7 @@ public class OptimalSelection {
                             ProductList newList = new ProductList();
                             newList.setProductList(newProducts);
                             newList.setMaxIndex(j);
-                            System.out.println("Adding product: " + products.get(j).getName() + " to list: " + pList);
+                            //System.out.println("Adding product: " + products.get(j).getName() + " to list: " + pList);
                             newList.setTotalPrice(products.get(j).getPrice() + pList.getTotalPrice());
                             newFinalList.add(newList);
                             addedNewItems = true;
@@ -77,23 +77,4 @@ public class OptimalSelection {
 
         return finalProductLists;
     }
-
-    public static void main(String[] args) throws Exception {
-        OptimalSelection os = new OptimalSelection();
-        List<ProductList> productLists = os.getOptimalSelection(3.0, 1);
-        for (ProductList pList : productLists) {
-            System.out.println("Total List Price: " + pList.getTotalPrice() + " List: " + pList.getProductList());
-        }
-    }
-
-    private List<Product> getDummyProducts() {
-        List<Product> dummyProducts = new ArrayList<>();
-        dummyProducts.add(new Product("p1", "123", 1.0));
-        dummyProducts.add(new Product("p2", "124", 2.0));
-        dummyProducts.add(new Product("p3", "125", 3.0));
-        dummyProducts.add(new Product("p4", "126", 8.0));
-        dummyProducts.add(new Product("p5", "127", 12.0));
-        return dummyProducts;
-    }
-
 }
